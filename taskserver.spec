@@ -1,12 +1,12 @@
 %define		shortname	taskd
 Summary:	Taskserver is a sync server for Taskwarrior and related products
 Name:		taskserver
-Version:	1.0.0
+Version:	1.1.0
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	http://www.taskwarrior.org/download/%{shortname}-%{version}.tar.gz
-# Source0-md5:	1cead23539e36d5623cb3ca1225072c0
+# Source0-md5:	ac855828c16f199bdbc45fbc227388d0
 URL:		http://taskwarrior.org/
 BuildRequires:	cmake
 BuildRequires:	gnutls-devel
@@ -42,4 +42,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{shortname}
 %attr(755,root,root) %{_bindir}/taskdctl
 %{_mandir}/man1/%{shortname}.1*
+%{_mandir}/man1/taskdctl.1*
 %{_mandir}/man5/taskdrc.5*
