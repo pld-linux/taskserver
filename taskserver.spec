@@ -2,7 +2,7 @@
 Summary:	Taskserver is a sync server for Taskwarrior and related products
 Name:		taskserver
 Version:	1.1.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Applications
 Source0:	http://www.taskwarrior.org/download/%{shortname}-%{version}.tar.gz
