@@ -6,11 +6,12 @@
 Summary:	Taskserver is a sync server for Taskwarrior and related products
 Name:		taskserver
 Version:	1.1.0
-Release:	3
+Release:	4
 License:	MIT
 Group:		Applications
 Source0:	http://www.taskwarrior.org/download/%{shortname}-%{version}.tar.gz
 # Source0-md5:	ac855828c16f199bdbc45fbc227388d0
+Patch0:		systemd-network.patch
 URL:		http://taskwarrior.org/
 BuildRequires:	cmake
 BuildRequires:	gnutls-devel
@@ -28,6 +29,7 @@ Taskserver is a sync server for Taskwarrior and related products.
 
 %prep
 %setup -q -n %{shortname}-%{version}
+%patch0 -p1
 
 %build
 %cmake

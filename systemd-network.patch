@@ -1,0 +1,26 @@
+From 7f4111499fd534df4e2e303a29f00e4b0bb3c0d8 Mon Sep 17 00:00:00 2001
+From: Jan Palus <jpalus@fastmail.com>
+Date: Sat, 11 Dec 2021 16:33:31 +0100
+Subject: [PATCH] systemd: make unit depend on network-online.target
+
+network.target provides rather relaxed guarantees about what's available
+so instead it's better to depend on network-online.target for:
+- ip address to bind to might not be set up at network.target
+- dns resolution might not work for hostname resolution used for server
+---
+ scripts/systemd/taskd.service | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/scripts/systemd/taskd.service b/scripts/systemd/taskd.service
+index e771738..d473438 100644
+--- a/scripts/systemd/taskd.service
++++ b/scripts/systemd/taskd.service
+@@ -1,6 +1,7 @@
+ [Unit]
+ Description=Secure server providing multi-user, multi-client access to task data
+-After=network.target
++Wants=network-online.target
++After=network-online.target
+ Documentation=http://taskwarrior.org/docs/
+ 
+ [Service]
