@@ -18,7 +18,7 @@ BuildRequires:	gnutls-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libuuid-devel
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.605
+BuildRequires:	rpmbuild(macros) >= 1.671
 %{?with_systemd:Requires:	systemd-units >= 38}
 Provides:	group(taskd)
 Provides:	user(taskd)
